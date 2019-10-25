@@ -1,0 +1,17 @@
+{
+  "name": "baby-type-n-play",
+  "version": "0.9.0",
+  "description": "A fun way for your baby to safely mash the keyboard",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/pamelafox/baby-type-n-play",
+  "keywords": [
+    "Electron",
+    "parenting"
+  ],
+  "devDependencies": {
+    "electron": "^7.0.0"
+  }
+}
