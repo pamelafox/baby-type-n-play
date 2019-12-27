@@ -1,5 +1,5 @@
 Mousetrap.bind('ctrl+shift+q', function() {
-    window.close();
+    window.closeCurrentWindow();
 });
 
 colorMap = {0: "red", 1: "orange", 2: "gold", 3: "green", 4: "blue", 5: "indigo", 6: "violet"}
