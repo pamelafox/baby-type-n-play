@@ -2,7 +2,6 @@ Mousetrap.bind('ctrl+shift+q', function() {
   window.closeCurrentWindow();
 });
 
-
 const colorMap = {
   0: 'red',
   1: 'orange',
