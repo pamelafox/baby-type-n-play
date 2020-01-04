@@ -19,15 +19,19 @@ document.body.addEventListener('keydown', function(e) {
     if (isAfterDelay && (e.key.length == 1) && (e.repeat != true)){
         latestKeyDownTime = currentTime;
         const charCode = e.key.charCodeAt(0);
-
-        // Update HTML.
-        const color = colorMap[charCode % 7];
-        document.getElementById('key').style.color = color;
-        document.getElementById('key').innerHTML = e.key;
-
-        // Play tone.
-        const frequency = (charCode - 45) * 10;
-        synth.triggerAttackRelease(frequency, toneDuration);
+        updateDOM(e.key, charCode);
+        playTone(charCode);
     }
     return false;
 });
+
+function updateDOM(key, charCode) {
+    const color = colorMap[charCode % 7];
+    document.getElementById('key').style.color = color;
+    document.getElementById('key').innerHTML = key;
+}
+
+function playTone(charCode) {
+    const frequency = (charCode - 45) * 10;
+    synth.triggerAttackRelease(frequency, toneDuration);
+}
