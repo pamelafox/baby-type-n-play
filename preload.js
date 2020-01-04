@@ -1,7 +1,8 @@
-const { remote } = require('electron');
+const {remote} = require('electron');
 
-let currWindow = remote.BrowserWindow.getFocusedWindow();
 
-window.closeCurrentWindow = function(){
+const currWindow = remote.BrowserWindow.getFocusedWindow();
+
+window.closeCurrentWindow = function() {
   currWindow.close();
-}
+};
