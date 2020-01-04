@@ -40,6 +40,6 @@ function updateDOM(key, charCode) {
 }
 
 function playTone(charCode) {
-    const frequency = (charCode - 45) * 10;
+    const frequency = (charCode - 25) * 10;
     synth.triggerAttackRelease(frequency, toneDuration);
 }
