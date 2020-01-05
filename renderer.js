@@ -26,9 +26,8 @@ document.body.addEventListener('keydown', function(e) {
   const isAfterDelay = (currentTime - latestKeyDownTime) > delayMilliseconds;
   if (isAfterDelay && (e.key.length == 1) && (e.repeat != true)) {
     latestKeyDownTime = currentTime;
-    const charCode = e.key.charCodeAt(0);
-    updateDOM(e.key, charCode);
-    playTone(charCode);
+    updateDOM(e.key);
+    playTone(e.key);
   }
   return false;
 });
@@ -36,9 +35,9 @@ document.body.addEventListener('keydown', function(e) {
 /**
  * Update DOM with most-recently-pressed key.
  * @param {string} key The pressed key.
- * @param {number} charCode Character code of the pressed key.
  */
-function updateDOM(key, charCode) {
+function updateDOM(key) {
+  const charCode = key.charCodeAt(0);
   const color = colorMap[charCode % 7];
   document.getElementById('key').style.color = color;
   document.getElementById('key').innerHTML = key;
@@ -46,9 +45,10 @@ function updateDOM(key, charCode) {
 
 /**
  * Play a tone based on the pressed key.
- * @param {number} charCode Character code of the pressed key.
+ * @param {string} key The pressed key.
  */
-function playTone(charCode) {
+function playTone(key) {
+  const charCode = key.charCodeAt(0);
   const frequency = (charCode - 25) * 10;
   synth.triggerAttackRelease(frequency, toneDuration);
 }
