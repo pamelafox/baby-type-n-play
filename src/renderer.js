@@ -33,9 +33,9 @@ document.body.addEventListener('keydown', function(e) {
 });
 
 /**
- * Update DOM with most-recently-pressed key.
- * @param {string} key The pressed key.
- */
+   * Update DOM with most-recently-pressed key.
+   * @param {string} key The pressed key.
+   */
 function updateDOM(key) {
   const charCode = key.charCodeAt(0);
   const color = colorMap[charCode % 7];
@@ -44,9 +44,9 @@ function updateDOM(key) {
 }
 
 /**
- * Play a tone based on the pressed key.
- * @param {string} key The pressed key.
- */
+   * Play a tone based on the pressed key.
+   * @param {string} key The pressed key.
+   */
 function playTone(key) {
   const charCode = key.charCodeAt(0);
   const frequency = (charCode - 25) * 10;

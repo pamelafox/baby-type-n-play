@@ -1,20 +1,41 @@
 {
   "name": "baby-type-n-play",
-  "version": "0.9.0",
+  "productName": "baby-type-n-play",
+  "version": "0.9.1",
   "description": "A fun way for your baby to safely mash the keyboard",
-  "main": "main.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
   "repository": "https://github.com/pamelafox/baby-type-n-play",
   "keywords": [
     "Electron",
-    "parenting"
+    "parenting",
+    "babies"
   ],
+  "author": {
+    "name": "Pamela Fox",
+    "email": "pamela.fox@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
-    "electron": "^7.2.4"
+    "electron-squirrel-startup": "^1.0.0",
+    "hotkeys-js": "^3.10.1",
+    "mousetrap": "^1.6.5"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-dmg": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
+    "@electron-forge/publisher-github": "^6.0.5",
+    "electron": "23.1.2",
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
     "husky": "^3.1.0",
